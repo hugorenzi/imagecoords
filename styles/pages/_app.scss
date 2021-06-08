@@ -1,0 +1,20 @@
+@import '../base/configs/colors';
+
+.app {
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+
+    input {
+      display: none;
+    }
+
+    .mainButton {
+      max-width: 300px;
+      margin-bottom: 32px;
+    }
+  }
+}

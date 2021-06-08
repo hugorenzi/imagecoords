@@ -1,0 +1,29 @@
+@import '../base/configs/colors';
+
+.mainButton {
+	@include transition("all 0.2s");
+
+  &.primary {
+    @include mainButton(
+      16px, //font-size
+      #fff, //color
+      $primary, // background-color
+      #fff, // color (hover)
+      darken($primary, 5%), // background-color (hover)
+      0, // border-width
+      transparent, // border-color
+      transparent, // border-color (hover)
+      48px, // height
+      8px // radius
+    );
+  }
+
+  &.upper {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  &.auto {
+    width: auto;
+  }
+}

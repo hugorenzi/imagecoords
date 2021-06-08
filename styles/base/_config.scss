@@ -1,0 +1,36 @@
+@import "configs/_fonts",
+        "configs/_resets",
+        "configs/_breakpoints",
+        "configs/_mixins",
+        "configs/_normalize",
+        "configs/sweet-alert";
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @extend .brandon-grotesque;
+  font-weight: 400;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1202px;
+  padding: 0 16px;
+  margin: auto;
+
+  &.--small {
+    max-width: 1032px;
+    padding: 100px 0;
+  }
+}
+
+button {
+  cursor: pointer;
+}

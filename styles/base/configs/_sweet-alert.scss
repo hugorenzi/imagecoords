@@ -1,0 +1,131 @@
+@import './colors',
+        './mixins';
+
+.swal2 {
+  &-container {
+    padding: 24px !important;
+  }
+
+  &-modal {
+    width: 100% !important;
+    max-width: 430px !important;
+    border-radius: 8px !important;
+    padding: 24px !important;
+  }
+
+  &-icon-show {
+    margin: 0 auto 12px;
+    @include transforms(scale(0.36));
+  }
+
+  &-progress-steps {
+    display: none !important;
+  }
+
+  // &-success {
+  //   &-line-long, &-line-tip {
+  //     background-color: $success !important;
+  //   }
+  //   &-ring {
+  //     border-color: lighten($success, 40%) !important;
+  //   }
+  // }
+
+  // &-question {
+  //   color: $primary !important;
+  //   border-color: lighten($primary, 40%) !important;
+  // }
+
+  &-title {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    line-height: 1.2;
+    margin-bottom: 12px !important;
+  }
+
+  &-content {
+    font-size: 16px;
+    padding: 0 !important;
+  }
+
+  &-close {
+    // color: $textMuted !important;
+
+    &:hover {
+      // color: $textMuted !important;
+      opacity: 0.4 !important;
+    }
+  }
+
+  &-input {
+    background: $white;
+    padding: 0 16px;
+    margin: 0;
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    font-weight: 500;
+    font-size: 16px;
+    color: $default;
+    border: none !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 12px !important;
+    margin-top: 12px;
+    outline: none !important;
+    -webkit-appearance: none !important;
+  }
+
+  &-actions {
+    margin: 0 !important;
+
+    > button {
+      margin: 12px 0 0 !important;
+      width: 100%;
+      border-radius: 12px !important;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    &.custom {
+      display: block;
+
+      > button {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &.swal2-loading .swal2-confirm {
+      border-radius: 100% !important;
+    }
+  }
+
+  &-confirm {
+    background-color: $primary !important;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    height: 48px;
+    border-radius: 8px !important;
+    font-size: 16px !important;
+
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+
+  &-cancel {
+    background-color: transparent !important;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    height: 48px;
+    border-radius: 8px !important;
+    font-size: 16px !important;
+    border: 1px solid $default !important;
+    color: $default !important;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

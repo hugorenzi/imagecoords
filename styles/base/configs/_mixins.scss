@@ -1,0 +1,82 @@
+@import "./breakpoints";
+
+@mixin max($bkp) {
+	@media screen and (max-width: $bkp) {
+		@content;
+	}
+}
+
+@mixin min($bkp) {
+	@media screen and (min-width: $bkp) {
+		@content;
+	}
+}
+
+@mixin maxMin($bkpMax, $bkpMin) {
+	@media screen and (max-width: $bkpMax) and (min-width: $bkpMin) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@include max($bkp4) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@include min($bkp4 + 1px) {
+		@content;
+	}
+}
+
+@mixin transition($arg) {
+	transition: unquote($arg);
+	-o-transition: unquote($arg);
+	-ms-transition: unquote($arg);
+	-moz-transition: unquote($arg);
+	-webkit-transition: unquote($arg);
+}
+
+@mixin transforms($args) {
+	transform: $args;
+	-o-transform: $args;
+	-ms-transform: $args;
+	-moz-transform: $args;
+	-webkit-transform: $args;
+}
+
+@mixin animations($arg) {
+    animation: $arg;
+    -o-animation: $arg;
+	-ms-animation: $arg;
+	-moz-animation: $arg;
+    -webkit-animation: $arg;
+}
+
+@mixin mainButton($fontSize, $fontColor, $backgroundColor, $fontHoverColor, $backgroundHoverColor, $borderWidth, $borderColor, $borderHoverColor, $height, $radius) {
+	font-size: $fontSize;
+	color: $fontColor;
+	background-color: $backgroundColor;
+  display: inline-block;
+  width: 100%;
+  height: $height;
+  line-height: $height;
+  text-align: center;
+  border: $borderWidth solid $borderColor;
+  border-radius: $radius;
+  text-decoration: none;
+  padding: 0 12px;
+  font-weight: 500;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+  &:hover, &:active {
+    background-color: $backgroundHoverColor;
+    color: $fontHoverColor;
+    border-color: $borderHoverColor;
+  }
+
+  @media screen and (max-width: $bkp4) {
+    font-size: 14px;
+  }
+}
