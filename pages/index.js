@@ -25,9 +25,9 @@ const App = () => {
       y: e.clientY - e.target.offsetTop
     };
 
-    Swal.fire({
+    MySwal.fire({
       title: 'Clicked Coords',
-      text: `x:${mousePos.y}, y:${mousePos.y}`
+      text: `x:${mousePos.x}, y:${mousePos.y}`
     });
   }
 
