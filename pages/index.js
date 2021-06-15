@@ -21,8 +21,8 @@ const App = () => {
 
   const getMousePos = (e) => {
     const mousePos = {
-      x: e.clientX - e.target.offsetLeft,
-      y: e.clientY - e.target.offsetTop
+      x: e.pageX - e.target.offsetLeft,
+      y: e.pageY - e.target.offsetTop
     };
 
     MySwal.fire({
