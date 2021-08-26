@@ -1,20 +1,90 @@
 @import '../base/configs/colors';
+@import '../base/configs/mixins';
 
 .app {
   .content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 100vh;
-
-    input {
+    .selectors {
       display: none;
+      margin-top: 65px;
+
+      &.active {
+        display: flex;
+      }
+
+      > div {
+        flex: 1;
+        height: calc(100vh - 65px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 36px;
+        cursor: pointer;
+        
+        > span {
+          @include transition("all 0.3s ease-in-out");
+          // @include transforms(translateY(-65px));
+        }
+
+        &:hover, &:active {
+          > span {
+            text-decoration: underline;
+            // @include transforms(translateY(-65px) scale(1.1));
+          }
+        }
+      }
+
+      &__encodeurl {
+        background-color: $primary;
+      }
+
+      &__imagecoords {
+        background-color: $secondary;
+      }
     }
 
-    .mainButton {
-      max-width: 300px;
-      margin: 32px 0;
+    .tools {
+      &__encodeurl {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 100vh;
+
+        &.active {
+          display: flex;
+        }
+
+        input {
+          max-width: 300px;
+          margin-bottom: 16px;
+        }
+
+        .mainButton {
+          max-width: 300px;
+        }
+      }
+
+      &__imagecoords {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 100vh;
+
+        &.active {
+          display: flex;
+        }
+
+        input {
+          display: none;
+        }
+
+        .mainButton {
+          max-width: 300px;
+          margin: 32px 0;
+        }
+      }
     }
   }
 }
