@@ -70,7 +70,7 @@ const App = () => {
         <title>Image Coords</title>
       </Head >
 
-      <div className="mainHeader back">
+      <div className="mainHeader">
         <FiArrowLeft size={24} onClick={() => backButton()} />
         <Image src="/logo.svg" width="107" height="25" className="logo" />
       </div>
